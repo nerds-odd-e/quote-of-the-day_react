@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run tests') {
             steps {
-                sh 'yarn test'
+                sh 'yarn install && yarn test'
             }
         }
         stage('Deploy') {
