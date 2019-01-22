@@ -1,17 +1,22 @@
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import QOTD from '../QOTD';
 
 describe('QOTD conponent', () => {
+    let qotd;
 
-    it('should show the quote as EAT POO FUCK SLEEP', () => {
-        let qotd = mount(<QOTD content={'EAT POO FUCK SLEEP'} />);
-        expect(qotd.find('QOTD').text()).toEqual('EAT POO FUCK SLEEP');
+    beforeEach(() => {
+        qotd = shallow(<QOTD />).instance();
     });
 
-    it('should show the quote as LET USE XXX TO BE OUR VARIABLE NAME', () => {
-        let qotd = mount(<QOTD content={'LET USE XXX TO BE OUR VARIABLE NAME'} />);
-        expect(qotd.find('QOTD').text()).toEqual('LET USE XXX TO BE OUR VARIABLE NAME');
+    it('call fetch QOTD', () => {
+        let spy = spyOn(qotd, 'fetchQuote');
+        qotd.componentWillMount();
+        expect(spy).toBeCalledTimes(1);
+    });
+
+    it('return quote from fetchQuote as THIS IS YS and JANE', () => {
+        expect(qotd.quote).toEqual('THIS IS YS and JANE');
     });
 
 });

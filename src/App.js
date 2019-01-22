@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Welcome />
-        <QOTD content={"Quote from GraphQL endpoint"} />
+        <QOTD />
       </div>
     );
   }
