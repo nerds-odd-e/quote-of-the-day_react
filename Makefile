@@ -4,14 +4,6 @@ SHELL := /bin/bash
 
 all: ci-test
 
-nvm: 
-	source "${HOME}/.nvm/nvm.sh" && nvm use 11.7
-
-yarn: nvm
-	npm i yarn
-
-node_modules: package.json yarn
-	yarn install 
-
-ci-test: node_modules
-	CI=true yarn test
+ci-test:
+	source "${HOME}/.nvm/nvm.sh" && nvm use 11.7 && npm i yarn && yarn install && CI=true yarn test
+	
