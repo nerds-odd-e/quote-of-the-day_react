@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run tests') {
             steps {
-                sh 'source $JENKINS_HOME/.nvm/nvm.sh && nvm use 11.7 && npm i yarn && yarn install && yarn test'
+                sh 'source $JENKINS_HOME/.nvm/nvm.sh && nvm use 11.7 && npm i yarn && yarn install && CI=true yarn test'
             }
         }
         stage('Deploy') {
