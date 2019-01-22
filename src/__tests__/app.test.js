@@ -1,12 +1,19 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from '../App';
-import Welcome from '../Welcome';
+
 import '../setupTests';
 
 describe('Welcome Page', () => {
-  it('Welcome component has the right text',() => {
-    const app = mount(<App/>);
+  it('Welcome component has the right text', () => {
+    const app = mount(<App />);
     expect(app.find('Welcome').text()).toEqual('Welcome Quote Seeker');
   });
+
+  it('should render QOTD component', () => {
+    let app = mount(<App />);
+    expect(app.find('QOTD').length).toBe(1);
+  });
+
 });
+
