@@ -2,8 +2,7 @@ FROM tiangolo/node-frontend:10 as build-stage
 WORKDIR /app
 COPY ./ ./
 
-RUN npm install
-RUN yarn build
+RUN yarn install && yarn build
 
 FROM nginx:1.15
 EXPOSE 80
