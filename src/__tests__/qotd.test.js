@@ -1,22 +1,44 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
+import wait from 'waait';
+import gql from 'graphql-tag';
+import { MockedProvider } from 'react-apollo/test-utils';
 import QOTD from '../QOTD';
 
 describe('QOTD conponent', () => {
-    let qotd;
+    let wrapper;
 
     beforeEach(() => {
-        qotd = shallow(<QOTD />).instance();
+    const mocks = [
+        {
+              request: { query: gql`{getQuoteOfTheDay { content originalAuthor submitter } }` },
+              result: {
+                data: {
+                    getQuoteOfTheDay: {
+                        __typename: 'Quote',
+                        content: "my quote of the day",
+                        originalAuthor: "EB",
+                        submitter: "AA",
+                    }
+                }
+              }
+        }
+        ];
+
+    wrapper = mount((
+        <MockedProvider mocks={mocks}>
+          <QOTD />
+        </MockedProvider>
+      ));
     });
 
-    it('call fetch QOTD', () => {
-        let spy = spyOn(qotd, 'fetchQuote');
-        qotd.componentWillMount();
-        expect(spy).toBeCalledTimes(1);
+    it('must let people know it is loading', async () => {
+        expect(wrapper.text()).toContain('Loading...');
     });
 
-    it('return quote from fetchQuote as THIS IS YS and JANE', () => {
-        expect(qotd.quote).toEqual('THIS IS YS and JANE');
+    it('must show the quote of the day after loading', async () => {
+        await wait(0);
+        expect(wrapper.text()).toContain('my quote of the day');
     });
 
 });
