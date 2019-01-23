@@ -26,14 +26,13 @@ const QuoteOfTheDay = () => (
 );
 
 export default class QOTD extends Component {
-
     constructor(props) {
         super(props);
         this.quote = "";
     }
 
     fetchQuote() {
-        this.quote.content = "THIS IS YS and JANE";
+        this.quote = "THIS IS YS and JANE";
     }
 
     componentWillMount() {
