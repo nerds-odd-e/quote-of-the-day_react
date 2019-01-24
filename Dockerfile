@@ -2,8 +2,9 @@ FROM tiangolo/node-frontend:10 as build-stage
 WORKDIR /app
 COPY ./ ./
 
-ARG BFF_ENDPOINT="REACT_APP_BFF_ENDPOINT=localhost:7088"
-RUN yarn install && ${BFF_ENDPOINT} yarn build
+RUN yarn install
+ARG REACT_APP_BFF_ENDPOINT=localhost:8080
+RUN yarn build
 
 FROM nginx:1.15
 EXPOSE 80
