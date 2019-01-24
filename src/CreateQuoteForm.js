@@ -14,18 +14,18 @@ class CreateQuoteForm extends React.Component {
                  <form>
                     <div>
                     <label> Content
-                       <textarea />
                     </label>
+                       <textarea />
                     </div>
                     <div>
                     <label> Original Author
-                       <input />
                     </label>
+                       <input />
                     </div>
                     <div>
                     <label> Submitter
-                       <input />
                     </label>
+                       <input />
                     </div>
                    <button>Submit</button>
                  </form>
