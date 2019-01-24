@@ -3,9 +3,9 @@ import React from 'react';
 import wait from 'waait';
 import gql from 'graphql-tag';
 import { MockedProvider } from 'react-apollo/test-utils';
-import QOTD from '../QOTD';
+import QuoteOfTheDay from '../QuoteOfTheDay';
 
-describe('QOTD conponent', () => {
+describe('QuoteOfTheDay conponent', () => {
     let wrapper;
 
     beforeEach(() => {
@@ -27,7 +27,7 @@ describe('QOTD conponent', () => {
 
     wrapper = mount((
         <MockedProvider mocks={mocks}>
-          <QOTD />
+          <QuoteOfTheDay />
         </MockedProvider>
       ));
     });

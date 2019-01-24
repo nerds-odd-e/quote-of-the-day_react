@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App';
-import QOTD from '../QOTD';
+import QuoteOfTheDay from '../QuoteOfTheDay';
 
 import '../setupTests';
 
@@ -13,7 +13,7 @@ describe('Welcome Page', () => {
 
   xit('should render QOTD component', () => {
     let app = mount(<App />);
-    expect(app.containsMatchingElement(<QOTD />)).toEqual(true);
+    expect(app.containsMatchingElement(<QuoteOfTheDay />)).toEqual(true);
   });
 
 });

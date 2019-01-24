@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Welcome from './Welcome';
-import QOTD from './QOTD';
+import QuoteOfTheDay from './QuoteOfTheDay';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Welcome />
-        <QOTD />
+        <QuoteOfTheDay/>
       </div>
     );
   }
