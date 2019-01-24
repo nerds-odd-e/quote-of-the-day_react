@@ -5,7 +5,7 @@ export default class Welcome extends Component {
   render(){
     return(
       <Jumbotron>
-        <h1>Quote Of The Day</h1>
+        <h1>Welcome Quote Seeker</h1>
       </Jumbotron>
     );
   }
