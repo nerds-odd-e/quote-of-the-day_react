@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.quote-of-the-day .content {
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.quote-of-the-day .original-author {
+    font-size: x-large;
+}
+
+.quote-of-the-day .submitter {
+    font-size: large;
+}

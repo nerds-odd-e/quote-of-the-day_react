@@ -16,9 +16,9 @@ describe('QuoteOfTheDay conponent', () => {
                 data: {
                     getQuoteOfTheDay: {
                         __typename: 'Quote',
-                        content: "my quote of the day",
-                        originalAuthor: "EB",
-                        submitter: "AA",
+                        content: "To read too many books is harmful.",
+                        originalAuthor: "Mao Zedong",
+                        submitter: "Terry",
                     }
                 }
               }
@@ -38,7 +38,9 @@ describe('QuoteOfTheDay conponent', () => {
 
     it('must show the quote of the day after loading', async () => {
         await wait(0);
-        expect(wrapper.text()).toContain('my quote of the day');
+        expect(wrapper.text()).toContain('To read too many books is harmful');
+        expect(wrapper.text()).toContain('By: Mao Zedong');
+        expect(wrapper.text()).toContain('Submitted by: Terry');
     });
 
 });
