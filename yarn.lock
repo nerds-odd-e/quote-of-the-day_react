@@ -1688,6 +1688,13 @@ babel-plugin-dynamic-import-node@2.2.0:
   dependencies:
     object.assign "^4.1.0"
 
+babel-plugin-inline-import-graphql-ast@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-inline-import-graphql-ast/-/babel-plugin-inline-import-graphql-ast-2.4.1.tgz#8ac66dbf815263331516791e9d14089938ec39be"
+  integrity sha1-isZtv4FSYzMVFnkenRQImTjsOb4=
+  dependencies:
+    graphql-tag "^2.9.2"
+
 babel-plugin-istanbul@^4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.6.tgz#36c59b2192efce81c5b378321b74175add1c9a45"
@@ -4470,7 +4477,7 @@ graphql-anywhere@^4.1.0-alpha.0:
     apollo-utilities "^1.1.2"
     tslib "^1.9.3"
 
-graphql-tag@^2.10.1, graphql-tag@^2.4.2:
+graphql-tag@^2.10.1, graphql-tag@^2.4.2, graphql-tag@^2.9.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==

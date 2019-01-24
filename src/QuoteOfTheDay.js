@@ -1,19 +1,14 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import GET_QUOTE_OF_TODAY from './queries'
 
-const GET_QUOTE_OF_TODAY = gql`
-  {
-    getQuoteOfTheDay(timezoneOffset: ${new Date().getTimezoneOffset()}) {
-        content
-         originalAuthor
-         submitter
-    }
-  }
-`;
+function formatDate(date) {
+    return ""+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+}
 
 const QuoteOfTheDay = () => (
-  <Query query={GET_QUOTE_OF_TODAY}>
+  <Query query={GET_QUOTE_OF_TODAY} variables={{date: formatDate(new Date())}}>
     {({ loading, error, data }) => {
       if (loading) return 'Loading...';
       if (error) return `Error! ${error.message}`;

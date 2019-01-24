@@ -30,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-plugin-inline-import-graphql-ast": "^2.4.1",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "jest": "^23.6.0",
