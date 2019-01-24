@@ -4,7 +4,7 @@ import { Query } from 'react-apollo';
 
 const GET_QUOTE_OF_TODAY = gql`
   {
-    getQuoteOfTheDay {
+    getQuoteOfTheDay(timezoneOffset: ${new Date().getTimezoneOffset()}) {
         content
          originalAuthor
          submitter

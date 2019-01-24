@@ -9,27 +9,27 @@ describe('QuoteOfTheDay conponent', () => {
     let wrapper;
 
     beforeEach(() => {
-    const mocks = [
-        {
-              request: { query: gql`{getQuoteOfTheDay { content originalAuthor submitter } }` },
-              result: {
-                data: {
-                    getQuoteOfTheDay: {
-                        __typename: 'Quote',
-                        content: "To read too many books is harmful.",
-                        originalAuthor: "Mao Zedong",
-                        submitter: "Terry",
+        var offset = new Date().getTimezoneOffset();
+        const mocks = [
+            {
+              request: { query: gql`{getQuoteOfTheDay(timezoneOffset: ${offset}) { content originalAuthor submitter } }` },
+                  result: {
+                    data: {
+                        getQuoteOfTheDay: {
+                            __typename: 'Quote',
+                            content: "To read too many books is harmful.",
+                            originalAuthor: "Mao Zedong",
+                            submitter: "Terry",
+                        }
                     }
-                }
-              }
-        }
-        ];
-
-    wrapper = mount((
-        <MockedProvider mocks={mocks}>
-          <QuoteOfTheDay />
-        </MockedProvider>
-      ));
+                  }
+            }
+            ];
+        wrapper = mount((
+            <MockedProvider mocks={mocks}>
+              <QuoteOfTheDay />
+            </MockedProvider>
+          ));
     });
 
     it('must let people know it is loading', async () => {
