@@ -8,8 +8,10 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
+const qotd_endpoint = process.env.REACT_APP_BFF_ENDPOINT || 'localhost:8080';
+const qotd_endpoint_url = `http://${qotd_endpoint}/quotegraphql`;
 const client = new ApolloClient({
-  link: new HttpLink({uri: "http://localhost:8080/quotegraphql"}),
+  link: new HttpLink({uri: qotd_endpoint_url}),
   cache: new InMemoryCache(),
 });
 
