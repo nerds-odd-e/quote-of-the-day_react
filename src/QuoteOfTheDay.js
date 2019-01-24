@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import ReactSpinner from 'react-spinjs-fix';
 import GET_QUOTE_OF_TODAY from './queries'
 
 function formatDate(date) {
@@ -10,7 +11,7 @@ function formatDate(date) {
 const QuoteOfTheDay = () => (
   <Query query={GET_QUOTE_OF_TODAY} variables={{date: formatDate(new Date())}}>
     {({ loading, error, data }) => {
-      if (loading) return 'Loading...';
+      if (loading) return <ReactSpinner />;
       if (error) return `Error! ${error.message}`;
 
       return (

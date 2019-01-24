@@ -3,6 +3,7 @@ import React from 'react';
 import wait from 'waait';
 import gql from 'graphql-tag';
 import { MockedProvider } from 'react-apollo/test-utils';
+import ReactSpinner from 'react-spinjs-fix';
 import QuoteOfTheDay from '../QuoteOfTheDay';
 import GET_QUOTE_OF_TODAY from '../queries'
 
@@ -51,7 +52,7 @@ describe('QuoteOfTheDay conponent', () => {
     });
 
     it('must let people know it is loading', async () => {
-        expect(wrapper.text()).toContain('Loading...');
+        expect(wrapper.containsMatchingElement(<ReactSpinner />)).toBeTruthy();
     });
 
     it('must show the quote of the day after loading', async () => {
