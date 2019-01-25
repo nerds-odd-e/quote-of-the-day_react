@@ -14,7 +14,7 @@ const QuoteOfTheDay = () => (
       if (error) return `Error! ${error.message}`;
 
       return (
-      <div className={"quote-of-the-day"}>
+      <div className={"quote-of-the-day"} id="quote-of-the-day">
       <div className={"content"}>{data.getQuoteOfTheDay.content}</div>
       <div className={"original-author"}>By: {data.getQuoteOfTheDay.originalAuthor}</div>
       <div className={"submitter"}>Submitted by: {data.getQuoteOfTheDay.submitter}</div>
