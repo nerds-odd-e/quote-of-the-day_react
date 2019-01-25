@@ -15,9 +15,9 @@ const QuoteOfTheDay = () => (
 
       return (
       <div className={"quote-of-the-day"} id="quote-of-the-day">
-      <div className={"content"}>{data.getQuoteOfTheDay.content}</div>
-      <div className={"original-author"}>By: {data.getQuoteOfTheDay.originalAuthor}</div>
-      <div className={"submitter"}>Submitted by: {data.getQuoteOfTheDay.submitter}</div>
+      <div className={"content"}>{data.getQuoteOfTheDay.Quote}</div>
+      <div className={"original-author"}>By: {data.getQuoteOfTheDay.Author}</div>
+      <div className={"submitter"}>Submitted by: {data.getQuoteOfTheDay.Submitter}</div>
       </div>
       );
     }}
