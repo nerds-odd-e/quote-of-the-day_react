@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateQuoteForm from './CreateQuoteForm';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class NavigateBar extends React.Component {
     state = {
@@ -12,13 +13,16 @@ class NavigateBar extends React.Component {
 
     render() {
         return (
+         <Router>
+         <div>
+            {this.props.children}
             <div>
-                <button onClick={this.handleClick}>
+                <Link to={"create"}>
                     Create Quote
-                </button>
-                {this.state.isShowingCreateQuoteForm &&
-                 <CreateQuoteForm onClose={this.handleClose}/>}
+                </Link>
             </div>
+         </div>
+         </Router>
         )
     }
 

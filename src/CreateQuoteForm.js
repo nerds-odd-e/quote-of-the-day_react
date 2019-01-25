@@ -13,18 +13,23 @@ class CreateQuoteForm extends React.Component {
                  <h2>Create A New Quote</h2>
                  <form>
                     <div>
-                    <label> Content
-                    </label>
+                    <label> Content </label>
                        <textarea />
                     </div>
                     <div>
-                    <label> Original Author
-                    </label>
+                    <label> Original Author </label>
                        <input />
                     </div>
                     <div>
-                    <label> Submitter
-                    </label>
+                    <label> Date </label>
+                       <input />
+                    </div>
+                    <div>
+                    <label> Location </label>
+                       <input />
+                    </div>
+                    <div>
+                    <label> Submitter </label>
                        <input />
                     </div>
                    <button>Submit</button>
@@ -33,7 +38,6 @@ class CreateQuoteForm extends React.Component {
                </Modal>
         );
     }
-
 }
 
 export default CreateQuoteForm;
