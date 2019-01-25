@@ -28,8 +28,8 @@ class CreateQuoteForm extends React.Component {
                        <input />
                     </div>
                    <button>Submit</button>
+                   <button onClick={this.props.onClose}>close</button>
                  </form>
-                 <button onClick={this.props.onClose}>close</button>
                </Modal>
         );
     }

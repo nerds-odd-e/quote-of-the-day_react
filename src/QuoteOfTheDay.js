@@ -1,5 +1,4 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import ReactSpinner from 'react-spinjs-fix';
 import GET_QUOTE_OF_TODAY from './queries'
